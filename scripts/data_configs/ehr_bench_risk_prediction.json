@@ -1,0 +1,21 @@
+{
+  "ED_Hospitalization": -1,
+  "ED_Inpatient_Mortality": -1,
+  "ED_ICU_Tranfer_12hour": -1,
+  "ED_Reattendance_3day": -1,
+  "ED_Critical_Outcomes": -1,
+  "Readmission_30day": -1,
+  "Readmission_60day": -1,
+  "Inpatient_Mortality": -1,
+  "LengthOfStay_3day": -1,
+  "LengthOfStay_7day": -1,
+  "ICU_Mortality_1day": -1,
+  "ICU_Mortality_2day": -1,
+  "ICU_Mortality_3day": -1,
+  "ICU_Mortality_7day": -1,
+  "ICU_Mortality_14day": -1,
+  "ICU_Stay_7day": -1,
+  "ICU_Stay_14day": -1,
+  "ICU_Readmission": -1
+
+}

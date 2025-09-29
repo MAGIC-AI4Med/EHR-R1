@@ -1,0 +1,40 @@
+OUTPUT_ROOT="/dnn_training_sys/users/longquan.lys/checkpoints"
+
+DATA_PATH="/mnt3/longquan.lys/projects/EHRL/mimiciv/cache/data_split/dm_clean/train_5000_per_task_weighted.csv"
+MODEL_PATH="/dnn_training_sys/model/nlp/Qwen2.5-7B-Instruct/Qwen__Qwen2.5-7B-Instruct"
+
+DATA_NAME="dm_clean_train_5000_per_task_weighted"
+MODEL_NAME="qwen2.5_7b"
+CKPT_NAME="${DATA_NAME}-${MODEL_NAME}-lr2e-5-epoch3"
+
+    # --load_dataset_mode "lazzy" \
+    # --split_batches True \
+    # --dispatch_batches True \
+    # --use_liger_kernel \
+accelerate launch --config_file=./scripts/accelerate_configs/deepspeed_zero2.yaml --num_processes 8 \
+    sft.py \
+    --bf16 True \
+    --load_dataset_mode "lazzy" \
+    --split_batches True \
+    --dispatch_batches True \
+    --use_liger_kernel \
+    --model_name_or_path ${MODEL_PATH} \
+    --dataset_name ${DATA_PATH} \
+    --output_dir ${OUTPUT_ROOT}/${CKPT_NAME} \
+    --max_seq_length 8192 \
+    --num_train_epochs 3 \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 4 \
+    --eval_strategy "no" \
+    --save_strategy "epoch" \
+    --save_total_limit 3 \
+    --learning_rate 2e-5 \
+    --weight_decay 0. \
+    --warmup_ratio 0.03 \
+    --lr_scheduler_type "cosine" \
+    --logging_steps 1 \
+    --gradient_checkpointing True \
+    --dataset_num_proc 1 \
+    --dataloader_num_workers 8 \
+    --report_to wandb

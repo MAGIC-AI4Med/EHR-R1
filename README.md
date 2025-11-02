@@ -337,5 +337,10 @@ python ./thinking_graph_preprocess/reasoning_generation.py \
 
 ## **Citation**
 ```bib
-
+@article{liao2025ehrr1,
+  title={{EHR-R1: A Reasoning-Enhanced Foundational Language Model for Electronic Health Record Analysis}},
+  author={Liao, Yusheng and Wu, Chaoyi and Liu, Junwei and Jiang, Shuyang and Qiu, Pengcheng and Wang, Haowen and Yue, Yun and Zhen, Shuai and Wang, Jian and Fan, Qianrui and Gu, Jinjie and Zhang, Ya and Wang, Yanfeng and Wang, Yu and Xie, Weidi},
+  journal={arXiv preprint arXiv:2510.25628},
+  year={2025}
+}
 ```

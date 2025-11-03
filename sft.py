@@ -87,8 +87,19 @@ def obtain_dataset_lazzy(script_args, tokenizer, num_workers=8):
                 clean_data = format_mimic_data(data, tokenizer, completion_only_loss, max_seq_length)
                 yield clean_data 
 
-    df = pd.read_csv(script_args.dataset_name)
-    sample_info = df.to_dict(orient='records')
+    if args.dataset_name.endswith("csv"):
+        sample_info_df = pd.read_csv(args.dataset_name)
+        sample_info = sample_info_df.to_dict(orient='records')
+    
+    elif args.dataset_name.endswith("jsonl"):
+        with open(args.dataset_name, "r") as f:
+            sample_info = [json.loads(line) for line in f.readlines()]
+    
+    else:
+        raise NotImplementedError
+
+    # df = pd.read_csv(script_args.dataset_name)
+    # sample_info = df.to_dict(orient='records')
     total_size = len(sample_info)
     print(f"Loading {total_size} training sample...")
 

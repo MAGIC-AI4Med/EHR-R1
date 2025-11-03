@@ -514,6 +514,10 @@ class MIMICIV(Dataset):
         
         if self.load_cache:
             sample = self.sample_info_cache[idx]
+        
+        elif "input" in self.sample_info[0]:
+            sample = self.sample_info[idx]
+
         else:
             if self.lazzy_mode:
                 patient_trajectory_list = read_parquet(f"""{self.ehr_dir}/{subject_id}.parquet""")

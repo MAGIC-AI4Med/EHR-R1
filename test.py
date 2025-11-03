@@ -233,8 +233,17 @@ def get_data_chunk(sample_infos, chunk_num, chunk_idx):
     return sample_infos[chunk_idx*chunk_size:(chunk_idx+1)*chunk_size]
 
 def obtain_dataset(args):
-    sample_info_df = pd.read_csv(args.dataset_name)
-    sample_infos = sample_info_df.to_dict(orient='records')
+    if args.dataset_name.endswith("csv"):
+        sample_info_df = pd.read_csv(args.dataset_name)
+        sample_infos = sample_info_df.to_dict(orient='records')
+    
+    elif args.dataset_name.endswith("jsonl"):
+        with open(args.dataset_name, "r") as f:
+            sample_infos = [json.loads(line) for line in f.readlines()]
+    
+    else:
+        raise NotImplementedError
+        
     sample_infos = get_data_chunk(sample_infos, args.chunk_num, args.chunk_idx)
     
     if "cdm" in args.dataset_name:

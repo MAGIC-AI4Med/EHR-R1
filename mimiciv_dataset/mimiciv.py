@@ -72,9 +72,18 @@ class MIMICIV(Dataset):
         if self.sample_info is None:
             if self.sample_info_path is None:
                 self.sample_info = []
-            else:
+            
+            elif self.smaple_info.path.endswith(".csv"):
                 df = pd.read_csv(self.sample_info_path)
                 self.sample_info = df.to_dict(orient = 'records')
+            
+            elif self.sample_info_path.endswith(".jsonl"):
+                with open(self.sample_info_path, "r") as f:
+                    self.sample_info = [json.loads(line) for line in f.readlines()]
+            
+            else:
+                raise NotImplementedError
+
         else:
             if isinstance(self.sample_info[0], str) or isinstance(self.sample_info[0], int):
                 self.sample_info = [{"subject_id": id} for id in self.sample_info]

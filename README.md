@@ -2,6 +2,7 @@
 [![Arxiv](https://img.shields.io/badge/Arxiv-Paper-red)](https://arxiv.org/pdf/2510.25628) 
 [![Data](https://img.shields.io/badge/Physionet-Dataset-blue)]()
 [![Model](https://img.shields.io/badge/Huggingface-EHR--Bench-yellow)](https://huggingface.co/datasets/BlueZeros/EHR-Bench)
+[![Model](https://img.shields.io/badge/Huggingface-EHR--Ins--Reasoning-yellow)](https://huggingface.co/datasets/BlueZeros/EHR-Ins-Reasoning)
 
 [![Model](https://img.shields.io/badge/Huggingface-EHR--R1--1.7B-yellow)](https://huggingface.co/BlueZeros/EHR-R1-1.7B) 
 [![Model](https://img.shields.io/badge/Huggingface-EHR--R1--8B-yellow)](https://huggingface.co/BlueZeros/EHR-R1-8B) 

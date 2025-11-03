@@ -324,7 +324,7 @@ do
         --threshold 5 &
 done
 ```
-* **step6: Synthesize reasoning chain for EHR taks**
+* **Step6: Synthesize reasoning chain for EHR taks**
 ```bash
 DATA_INDEX_DIR={YOUR_EVIDECNCE_FILE}
 

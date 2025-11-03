@@ -25,11 +25,11 @@ We introduce a large-scale, high-quality dataset and a specialized, reasoning-en
     + [**Generate Reasoning Data**](#generate-reasoning-data)
   * [**Citation**](#citation)
 ## 💡 **KeyPoint**
-* We open-source a large-scale instruction dataset [**EHR-Ins**](data_url), including 3.5M non-reasoning data and 300k reasoning data.
+* We open-source a large-scale instruction dataset [**EHR-Ins**](data_url), including 3.5M non-reasoning data and 300k reasoning data. (Coming Soon)
 
 * We open-source a comprehensive benchmark [**EHR-Bench**](data_url), which covers 42 distinct EHR analysis tasks.
 
-* We open-source EHR reasoning-enhanced LLMs **EHR-R1**, including [**EHR-R1-1.7B**](https://huggingface.co/BlueZeros/EHR-R1-1.7B), [**EHR-R1-8B**](https://huggingface.co/BlueZeros/EHR-R1-8B), and [**EHR-R1-72**](https://huggingface.co/BlueZeros/EHR-R1-72B)
+* We open-source EHR reasoning-enhanced LLMs **EHR-R1**, including [**EHR-R1-1.7B**](https://huggingface.co/BlueZeros/EHR-R1-1.7B), [**EHR-R1-8B**](https://huggingface.co/BlueZeros/EHR-R1-8B), and **EHR-R1-72B** (Coming Soon).
 
 * We open-source the "thinking-graph" pipeline, which can synthesize reasoning chains for EHR analysis tasks according to the relation of EHR entities.
 

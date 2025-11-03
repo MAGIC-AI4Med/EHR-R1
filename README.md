@@ -25,9 +25,9 @@ We introduce a large-scale, high-quality dataset and a specialized, reasoning-en
     + [**Generate Reasoning Data**](#generate-reasoning-data)
   * [**Citation**](#citation)
 ## 💡 **KeyPoint**
-* We open-source a large-scale instruction dataset [**EHR-Ins**](data_url), including 3.5M non-reasoning data and 300k reasoning data. (Coming Soon)
+* We open-source a large-scale instruction dataset **EHR-Ins**, including 3.5M non-reasoning data and 300k reasoning data. (Coming Soon)
 
-* We open-source a comprehensive benchmark [**EHR-Bench**](data_url), which covers 42 distinct EHR analysis tasks.
+* We open-source a comprehensive benchmark [**EHR-Bench**](https://huggingface.co/datasets/BlueZeros/EHR-Bench), which covers 42 distinct EHR analysis tasks.
 
 * We open-source EHR reasoning-enhanced LLMs **EHR-R1**, including [**EHR-R1-1.7B**](https://huggingface.co/BlueZeros/EHR-R1-1.7B), [**EHR-R1-8B**](https://huggingface.co/BlueZeros/EHR-R1-8B), and **EHR-R1-72B** (Coming Soon).
 

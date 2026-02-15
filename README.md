@@ -2,6 +2,7 @@
 [![Arxiv](https://img.shields.io/badge/Arxiv-Paper-red)](https://arxiv.org/pdf/2510.25628) 
 [![Data](https://img.shields.io/badge/Physionet-Dataset-blue)]()
 [![Model](https://img.shields.io/badge/Huggingface-EHR--Bench-yellow)](https://huggingface.co/datasets/BlueZeros/EHR-Bench)
+[![Model](https://img.shields.io/badge/Huggingface-EHR--Ins--Reasoning-yellow)](https://huggingface.co/datasets/BlueZeros/EHR-Ins-Reasoning)
 
 [![Model](https://img.shields.io/badge/Huggingface-EHR--R1--1.7B-yellow)](https://huggingface.co/BlueZeros/EHR-R1-1.7B) 
 [![Model](https://img.shields.io/badge/Huggingface-EHR--R1--8B-yellow)](https://huggingface.co/BlueZeros/EHR-R1-8B) 
@@ -25,7 +26,7 @@ We introduce a large-scale, high-quality dataset and a specialized, reasoning-en
     + [**Generate Reasoning Data**](#generate-reasoning-data)
   * [**Citation**](#citation)
 ## 💡 **KeyPoint**
-* We open-source a large-scale instruction dataset **EHR-Ins**, including **3.5M** non-reasoning data and **300k** reasoning data. (Coming Soon)
+* We open-source a large-scale instruction dataset [**EHR-Ins**](https://huggingface.co/datasets/BlueZeros/EHR-Ins-Reasoning), including **3.5M** non-reasoning data and **300k** reasoning data.
 
 * We open-source a comprehensive benchmark [**EHR-Bench**](https://huggingface.co/datasets/BlueZeros/EHR-Bench), which covers **42** distinct EHR analysis tasks.
 

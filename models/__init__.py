@@ -1,7 +1,4 @@
 from models.base_model import Local_Model, GPTOSS_Local_Model
-from models.r1 import R1_Model
-from models.gpt4o import GPT4o_Model
-from models.gpt_oss import GPTOSS_Sever_Model
 
 def get_model(model_name, use_vllm=False, gpu_memory_utilization=0.7, max_seq_len=32000, url=None):
     
@@ -16,8 +13,6 @@ def get_model(model_name, use_vllm=False, gpu_memory_utilization=0.7, max_seq_le
     #     return OpenAI_Model(model_type="gpt-4o-mini")
 
     # else:
-    if model_name == "r1":
-        return R1_Model()
     
     if model_name == "gpt-4o":
         return GPT4o_Model()

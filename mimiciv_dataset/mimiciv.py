@@ -64,11 +64,6 @@ class MIMICIV(Dataset):
         os.makedirs(self.cache_dir, exist_ok=True)
         os.makedirs(self.sample_cache_dir, exist_ok=True)
 
-        self.convertor = MIMICIVStringConvertor(
-            origin_data_dir=self.origin_data_dir,
-            cache_dir=self.cache_dir,
-        )
-
         if self.sample_info is None:
             if self.sample_info_path is None:
                 self.sample_info = []
@@ -93,8 +88,17 @@ class MIMICIV(Dataset):
 
         self.load_cache = False
         self.load_sample_cache()
-        self.patient_trajectory_dict = self.load_trajectory()
         self.similar_item = {}
+
+        if self.load_cache or "input" in self.sample_info[0]:
+            self.convertor = None
+
+        else:
+            self.patient_trajectory_dict = self.load_trajectory()
+            self.convertor = MIMICIVStringConvertor(
+                origin_data_dir=self.origin_data_dir,
+                cache_dir=self.cache_dir,
+            )
         
         if self.log:
             print(len(self.sample_info))
@@ -519,7 +523,6 @@ class MIMICIV(Dataset):
         return patient_trajectory_dict
 
     def __getitem__(self, idx):
-        subject_id = str(self.sample_info[idx]["subject_id"])
         
         if self.load_cache:
             sample = self.sample_info_cache[idx]
@@ -528,6 +531,8 @@ class MIMICIV(Dataset):
             sample = self.sample_info[idx]
 
         else:
+            subject_id = str(self.sample_info[idx]["subject_id"])
+            
             if self.lazzy_mode:
                 patient_trajectory_list = read_parquet(f"""{self.ehr_dir}/{subject_id}.parquet""")
             else:

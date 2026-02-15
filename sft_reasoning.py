@@ -41,7 +41,6 @@ class SFTScriptArguments(ScriptArguments):
     root_dir: str = field(metadata={"help": "dataset root"}, default="./datas")
     load_dataset_mode: str = field(metadata={"help": "mode for load dataset, choose from [lazzy, direct]"}, default="direct")
     eval_dataset_name: str = field(metadata={"help": "dataset name for evaluation"}, default="")
-    add_consultation_data: bool = field(metadata={"help": "whether load consultation data"}, default=False)
     curriculum: bool = field(metadata={"help": "mix multiple dataset with curriculum learning, only work when dataset_num=2."}, default=False)
     length_curriculum: bool = field(metadata={"help": "mix multiple dataset with curriculum learning, only work when dataset_num=2."}, default=False)
 
@@ -106,14 +105,6 @@ def obtain_dataset_lazzy(script_args, dataset_name, tokenizer, num_workers=8):
         log=False,
         lazzy_mode=True,
     ) for dataset_path in dataset_name.split(",")]
-
-    if script_args.add_consultation_data:
-        with open("/dnn_training_sys/users/longquan.lys/datas/consultation_datas/SFT_data_full_trainset.json", "r") as f:
-            consultation_datas = json.load(f)
-            random.shuffle(consultation_datas)
-
-        print(f"Loading {len(consultation_datas)} training sample from consultation datas...")
-        dataset_list.append(consultation_datas)
     
     dataset_len = [len(dataset) for dataset in dataset_list]
     print(f"Load {len(dataset_len)} dataset in total, with length list: {dataset_len}")

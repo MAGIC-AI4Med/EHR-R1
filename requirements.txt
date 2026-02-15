@@ -399,8 +399,6 @@ traitlets==5.14.3
 transformers==4.51.3
 transformers-stream-generator==0.0.5
 triton==3.2.0
-# Editable install with no version control (trl==0.22.0.dev0)
--e /dnn_training_sys/users/longquan.lys/trl-main
 truststore @ file:///croot/truststore_1695244293384/work
 typeguard==4.3.0
 typer==0.15.3

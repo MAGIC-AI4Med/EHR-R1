@@ -1,3 +1,5 @@
 ./data
 ./datas
 ./results
+__pycache__/
+*.py[cod]

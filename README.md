@@ -1,6 +1,8 @@
 # Toward Reasoning-Enhanced Large Langugage Models for EHR Analysis
 [![Arxiv](https://img.shields.io/badge/Arxiv-Paper-red)](https://arxiv.org/pdf/2510.25628) 
 [![Data](https://img.shields.io/badge/Physionet-Dataset-blue)]()
+[![Data](https://img.shields.io/badge/Huggingface-Dataset-yellow)](https://huggingface.co/datasets/BlueZeros/EHR-R1-analysis)
+
 [![Model](https://img.shields.io/badge/Huggingface-EHR--Bench-yellow)](https://huggingface.co/datasets/BlueZeros/EHR-Bench)
 [![Model](https://img.shields.io/badge/Huggingface-EHR--Ins--Reasoning-yellow)](https://huggingface.co/datasets/BlueZeros/EHR-Ins-Reasoning)
 
@@ -152,7 +154,7 @@ pip install -r requirements.text
 ```
 
 ### **Step 2: Preprocess Data**
-* **(Option 1)** Download Dataset from [Physionet](https://physionet.org/content/mimic-iv-ehr-analysis/1.0/). Put  into `./datas` and unzip all files. The directory is as follow:
+* **(Option 1)** Download Dataset from [Physionet](https://physionet.org/content/mimic-iv-ehr-analysis/1.0/) or [Huggingface](https://huggingface.co/datasets/BlueZeros/EHR-R1-analysis). Put  into `./datas` and unzip all files. The directory is as follow:
 ```
 mimic-iv-ehr-analysis/
 ├── patients_ehr.tar.gz
